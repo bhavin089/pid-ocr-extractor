@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>P&ID OCR Extractor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>P&ID OCR Extractor</h1>
+            <p>Upload a PDF drawing, extract tags, validate against MDS, and export Excel.</p>
+          </div>
+          <div class="status-pill" id="health">Checking backend</div>
+        </header>
+
+        <section class="upload-panel">
+          <label class="dropzone" id="dropzone">
+            <input id="fileInput" type="file" accept="application/pdf" />
+            <span class="drop-title">Click to add P&ID PDF</span>
+            <span class="drop-copy" id="fileName">or drag a drawing here</span>
+          </label>
+          <button id="extractButton" type="button" disabled>Run Extraction</button>
+        </section>
+
+        <section class="result-grid">
+          <div class="metric">
+            <span>P&ID Number</span>
+            <strong id="pidNumber">-</strong>
+          </div>
+          <div class="metric">
+            <span>Tags Found</span>
+            <strong id="tagCount">0</strong>
+          </div>
+          <div class="metric">
+            <span>MDS Valid</span>
+            <strong id="validCount">0</strong>
+          </div>
+          <div class="metric">
+            <span>Needs Review</span>
+            <strong id="reviewCount">0</strong>
+          </div>
+        </section>
+
+        <section class="table-section">
+          <div class="table-actions">
+            <h2>Extraction Preview</h2>
+            <a id="downloadLink" class="download hidden" href="#">Download Excel</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th>Type</th>
+                  <th>Page</th>
+                  <th>MDS</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody id="previewRows">
+                <tr><td colspan="5">Upload a PDF to begin.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="warnings" class="warnings hidden"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+

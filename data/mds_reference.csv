@@ -1,0 +1,8 @@
+tag,asset_id,description,discipline,system,criticality,status
+FT-101,MDS-INST-0001,Feed flow transmitter,Instrumentation,Feed,High,active
+PT-201,MDS-INST-0002,Reactor pressure transmitter,Instrumentation,Reaction,High,active
+XV-301,MDS-VALVE-0001,Emergency shutdown valve,Instrumentation,Utilities,Critical,active
+P-100A,MDS-EQ-0001,Main transfer pump A,Mechanical,Transfer,High,active
+P-100B,MDS-EQ-0002,Main transfer pump B,Mechanical,Transfer,High,active
+V-101,MDS-EQ-0003,Feed vessel,Mechanical,Feed,Medium,active
+
