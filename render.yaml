@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: pid-ocr-extractor
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: OCR_LANGUAGE
+        value: eng
+      - key: RENDER_DPI
+        value: "150"
+      - key: MIN_CONFIDENCE
+        value: "35"
+      - key: MAX_UPLOAD_MB
+        value: "25"
+      - key: MAX_PAGES
+        value: "5"
+      - key: OCR_TIMEOUT_SECONDS
+        value: "20"
